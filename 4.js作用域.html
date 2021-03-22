@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+    //变量在函数内声明，变量为局部作用域，局部变量在生命的函数外不可以访问,局部变量只作用于函数内
+    //局部变量在函数执行时开始创建，函数执行完后自动销毁
+    function myFunction(){
+        var carName = "volvo";
+    }
+    myFunction();
+    document.getElementById("demo").innerHTML = typeof(carName);//undefined
+
+    //全局变量：变量在函数外声明，为全局变量，全局变量有全局作用域，网页中所有脚本和函数均可使用
+    //全局变量在页面关闭后销毁
+    //全局变量是window对象，所有数据变量都属于window对象
+    var carName1 = "baoma";
+    myFunction1();
+    function myFunction1(){
+        document.getElementById("demo1").innerHTML = carName1;
+    }
+
+    // 如果变量在函数内没有声明（没有使用var），该变量为全局变量
+    function myFunction2(){
+        carName2 = "benchi";
+    }
+    myFunction2();
+    document.getElementById("demo2").innerHTML = carName2;
+    document.getElementById("demo3").innerHTML = window.carName2;
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+action属性：定义在提交表单时执行的动作，省略action则action会被设置为当前页面
+method属性：规定在表单提交时所使用的的HTTP方法（GET/POST）
+    GET，表单被动提交，没有敏感信息，表单数据在页面地址栏时课件的，适合少量数据的提交，浏览器会设定容量限制
+    POST，表单正在更新数据或包含敏感信息，POST的安全性更高，在页面地址栏中被提交的数据是不可见得
+name属性：如果正确的被提交，每个输入字段 必须设置name属性
+-->
+
+<!--
+accept-charset:规定被提交表单中所使用的的字符集--默认--页面字符集
+action:规定想何处提交表单的地址
+autocomplete：规定浏览器应该自动完成表单--默认--开启
+enctype:规定被提交数据的编码--默认--url-encoded
+method：规定提交表单时所使用的的HTTP方法--默认--GET
+name：识别表单的名称
+novalidate：规定浏览器不验证表单
+target：规定action属性中地址的目标--默认--_self
+-->
+
+<!--<form name="myForm" onsubmit="return myFunction()" method="post"></form>-->
+<!--姓名：<input type="text" name="fname">-->
+<!--<input type="submit" value="submit">-->
+
+<p>请输入1-10的数字</p>
+<input type="text" id="num">
+<button onclick="myFunction()">验证</button>
+<p id="demo"></p>
+<br>
+<br>
+<form action="" method="post">
+    <input type="text" name="fname" required="required">
+    <input type="submit" value="提交">
+</form>
+
+email:<input type="text" id="email">
+<!--<input type="submit" value="submit" onsubmit="submitThis()">-->
+<button onclick="submitThis()">click</button>
+<script>
+    // function myFunction(){
+    //     var x = document.forms["myForm"]["fname"].value;
+    //     if(x == null || x ==""){
+    //         alert('请输入姓名');
+    //         return false;
+    //     }
+    // }
+
+    function myFunction(){
+        var x,txt;
+        x = document.getElementById("num").value;
+        if(isNaN(x) || x > 10 || x < 0) {
+            txt = "输入错误";
+        }else{
+            txt = "输入正确";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+    function submitThis(){
+        var x = document.getElementById("email").value;
+        var atops = x.indexOf("@");
+        console.log(atops);
+        var dotpos = x.lastIndexOf(".");
+        console.log(dotpos+2);
+        if(atops < 1 || dotpos < atops + 2 || dotpos+2 >= x.length){
+            alert('无效地址')
+        }
+    }
+</script>
+</body>
+</html>

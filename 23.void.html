@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="javascript:void(0)">单击此处无反应</a>
+<a href="javascript:void(alert('警告'))">单击</a>
+<button onclick="getValue()">click</button>
+<a href="#pos">到指定位置</a>
+<div style="height:2000px">123</div>
+<p id="pos">尾部</p>
+<script>
+    function getValue(){
+        var a, b, c;
+        a = void( b = 5, c = 7);
+        alert("a = "+ a + " b = " + b + " c = " + c );
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+<!--    while循环-->
+    var i = 0;
+    var x = "";
+    while(i < 5){
+        x = x + "number "+ i + "<br>";
+        i++;
+        document.write(x);
+    }
+    document.write(x + "<br>");
+//    do-while循环
+    var j = 7;
+    var y = "";
+    do{
+        y = y + "number" + j +"<br>";
+        j++;
+        document.write(y);
+    }
+    while(j < 9);
+    document.write(y);
+
+//    for循环和while循环的比较
+//for循环
+    cars = ["BMW","VOLVO","SAAB"];
+    var k = 0;
+    for(;cars[k];){
+        document.write(cars[k] + "<br>");
+        k++;
+    }
+//while循环
+    cars = ["BMW","VOLVO","SAAB"];
+    var l = 0;
+    while(cars[l]){
+        document.write(cars[l] + "<br>");
+        l++;
+    }
+</script>
+</body>
+</html>

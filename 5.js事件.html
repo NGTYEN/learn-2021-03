@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="getElementById('demo').innerHTML = Date()">现在的时间是？</button>
+<p id="demo"></p>
+<button onclick="this.innerHTML = Date()">现在的时间是？</button>
+<button id="demo1" onmouseover="onMouseOver()" onmouseout="onMouseOut()">在我上面移动鼠标</button>
+<script>
+    //常见HTML事件
+    // onchange,onclick,onmouseover,onmouseout,onkeydown,onload
+    function onMouseOver(){
+        document.getElementById('demo1').innerHTML = "我的文字会发生变化";
+    }
+    function onMouseOut(){
+        document.getElementById('demo1').innerHTML = "在我上面移动鼠标";
+    }
+</script>
+</body>
+</html>

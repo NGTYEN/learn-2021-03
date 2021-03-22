@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    var x = 0.1;
+    var y = 0.2;
+    var z = x + y;
+    document.write(z);
+    var w = (x * 10 + y * 10) / 10;
+    document.write(w);
+    //字符串内直接换行会报错
+    document.getElementById("demo").innerHTML = "hello" +
+        "world"
+    document.getElementById("demo1").innerHTML =
+        "hello world";
+//    字符串断行使用\
+    document.getElementById("demo2").innerHTML = "hello \
+        world"
+
+//    js不能使用名字为索引
+    var person = [];
+    person["firstname"] = "john";
+    person["lastname"] = "doe";
+    person["age"] = 12;
+    var x = person.length;
+    var  y = person[0];
+    document.getElementById("demo3").innerHTML= x + " " + y;
+
+    //定义数组元素，最后不能添加逗号
+    var color = [1,2,3,]
+    console.log(color.length);
+
+//    定义对象，最后不能添加逗号
+    var websites = {
+        site : "cainiao",
+        url : "www.123.com",
+    }
+    console.log(websites.site);
+
+    // var obj;
+    console.log(typeof obj == "undefined");
+    console.log(typeof obj !== "undefined");
+    console.log(typeof obj !== "undefined" && obj !== null);
+</script>
+</body>
+</html>

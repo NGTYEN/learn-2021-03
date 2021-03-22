@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<script>
+    function myFunction(){
+        var x;
+        var d = new Date().getDay();
+        console.log(d);
+        switch(d){
+            case 0:x = '星期日';
+                break;
+            case 6:x = '星期六';
+                break;
+                default:x="期待周末";
+        }
+        document.getElementById('demo').innerHTML = x;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "visit runoob";
+    var n = str.search(/runoob/i);//i是一个修饰符，搜索不区分大小
+    document.write(n + "<br>");
+    var L = str.search(/Runoob/i);//i是一个修饰符，搜索不区分大小
+    document.write(L + "<br>");
+    var m = str.search("runoob");
+    document.write(m + "<br>");
+    var txt = "hello world";
+    var a = txt.replace(/world/i,"vue");
+    document.write(a+ "<br>")
+    var b = txt.replace("world","vue");
+    document.write(b+"<br>");
+    var txt1 = "hello hello hello wprld";
+    var c = txt1.replace(/hello/g,"vue");
+    document.write(c + "<br>");
+    var d = txt1.replace(/hello/i,"vue");
+    document.write(d + "<br>");
+
+    //test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false
+    var patt = /e/;
+    document.write(patt.test('hello')+"<br>");
+    document.write(/e/.test('hello')+"<br>");
+
+//    exec() 方法用于检索字符串中的正则表达式的匹配
+//    该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null
+    document.write(/e/.exec("hello")+"<br>");
+
+
+</script>
+</body>
+</html>

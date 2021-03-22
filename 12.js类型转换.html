@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<script>
+//js里有六种不同的数据类型：string,number,boolean,object,function,symbol
+//3中对象类型：object,Date,Array
+//不包含任何值得数据类型：null,undefined
+//constructor,typeof
+var fruits = ["banana","orange","apple","mango"];
+document.getElementById("demo").innerHTML = isArray(fruits);
+function isArray(myArray){
+    return myArray.constructor.toString().indexOf("Array") > -1;
+}
+
+var myDate = new Date();
+document.getElementById("demo1").innerHTML = isArray1(myDate);
+function isArray1(myDate){
+    return myDate.constructor.toString().indexOf("Date")> -1 ;
+}
+
+//String()将数字转换为字符串
+// var x = 123;
+// document.write(x.toExponential()+"<br>");
+// document.write(typeof(x.toExponential())+"<br>");
+// document.write(x.toFixed(2)+"<br>");
+// document.write(typeof(x.toFixed(2))+"<br>");
+// document.write(x.toPrecision(4)+"<br>");
+// document.write(typeof(x.toPrecision(4))+"<br>");
+// //将布尔值转换为字符串
+// document.write(String(false)+"<br>");
+// document.write(typeof(String(false))+"<br>");
+// document.write(String(true)+"<br>");
+// document.write(typeof(String(true))+"<br>");
+// document.write(false.toString()+"<br>");
+// document.write(typeof(false.toString())+"<br>");
+// document.write(true.toString()+"<br>");
+// document.write(typeof(true.toString())+"<br>");
+// //将日期转换为字符串
+// document.write(String(new Date())+"<br>");
+// document.write(typeof(String(new Date()))+"<br>");
+// var obj = new Date();
+// document.write(obj.toString()+"<br>");
+// document.write(typeof(obj.toString())+"<br>");
+//
+// //从Date对象返回一个月的某一天
+// document.write(obj.getDate()+"<br>");
+// //从Date对象返回一个周的某一天
+// document.write(obj.getDay()+"<br>");
+// ////从Date对象以四位数返回年份
+// document.write(obj.getFullYear()+"<br>");
+// //返回Date对象的小时
+// document.write(obj.getHours()+"<br>");
+// //返回Date对象的毫秒
+// document.write(obj.getMilliseconds()+"<br>");
+// //返回Date对象的分钟
+// document.write(obj.getMinutes()+"<br>");
+// //返回Date对象的月份
+// document.write(obj.getMonth()+"<br>");
+// //返回Date对象的秒数
+// document.write(obj.getSeconds()+"<br>");
+// //返回1970 年 1 月 1 日至今的毫秒数。
+// document.write(obj.getTime()+"<br>");
+
+//将字符串转换为数字Number(),空字符串转换为0，其他字符串转换我NAN
+document.write(Number(NaN)+"<br>");
+document.write(Number(" ")+"<br>");
+document.write(Number.parseFloat(NaN)+"<br>");
+document.write(typeof(Number.parseFloat(NaN))+"<br>");
+document.write(Number.parseFloat(23)+"<br>");
+document.write(typeof(Number.parseFloat(23))+"<br>");
+document.write(Number.parseInt(23.1)+"<br>");
+document.write(typeof(Number.parseInt(23.3))+"<br>");
+
+//将布尔值转换为数字
+document.write(Number(false)+"<br>");
+document.write(Number(true)+"<br>");
+//将日期转换为数字
+document.write(Number(new Date())+"<br>");
+document.write(new Date().getTime()+"<br>");
+
+//自动转换类型
+document.write(5 + null+"<br>");//5
+document.write("5" + null +"<br>");
+document.write("5" + 1 +"<br>");//51
+document.write("5" - 1 +"<br>");//4
+
+//自动转换为字符串
+var myVar1 = {name:"john"};
+document.getElementById("demo2").innerHTML = myVar1;
+var myVar2 = [1,2,3,4];
+document.getElementById("demo3").innerHTML = myVar2;
+var myVar3 = new Date();
+document.getElementById("demo4").innerHTML = myVar3;
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

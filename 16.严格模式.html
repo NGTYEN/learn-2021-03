@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+<!--    use strict表示代码在严格模式下执行，只允许出现在脚本或函数的开头，严格模式下不能使用未声明的变量-->
+//严格模式的限制
+// // 1.不允许使用未定义变量
+// function myFunction1(){
+//     "use strict";
+//     x = 301;//严格模式下x未定义
+// }
+// myFunction1();
+//
+// //2.不允许删除变量或对象
+// function myFunction2(){
+//     "use strict";
+//     var x = 321;
+//     delete x;
+// }
+// myFunction2();
+
+// //3.不允许删除函数
+// function myFunction3(){
+//     "use strict";
+//     function x(p1, p2) {};
+//     delete x;
+// }
+//myFunction3();
+
+// //不允许变量重名
+// function myFunction4(){
+//     "use strict";
+//     function x(p1,p1){}
+// }
+
+// // 不允许使用八进制
+// function myFUnction5(){
+//     "use strict";
+//     var x = 010;
+// }
+
+//不允许使用转移字符
+// function myFunction6(){
+//     "use strict";
+//     var x = \010;
+// }
+
+// //不允许使用只读属性赋值
+// function myFunction7(){
+//     "use strict";
+//     var obj = {};
+//     Object.defineProperty(obj,"x",{
+//         value:0,writable:false
+//     });
+//     obj.x = 213;
+// }
+// myFunction7();
+
+// //不允许对一个使用getter方法读取的属性进行赋值
+// function myFunction8(){
+//     "use strict";
+//     var obj = {
+//         get x(){
+//             return 0;
+//         }
+//     }
+//     obj.x = 123;
+// }
+// myFunction8();
+
+// //不允许删除一个不允许删除的属性
+// function myFunction9(){
+//     "use strict";
+//     delete Object.prototype;
+// }
+// myFunction9();
+
+// //变量名不能使用 eval字符串
+// function myFunction10(){
+//     "use strict";
+//     var eval = 123;
+// }
+
+// //变量名不能使用arguments字符串
+// function myFunction11(){
+//     "use strict";
+//     var arguments = 123;
+// }
+
+//不能使用以下语句
+// function myFunction12(){
+//     "use strict";
+//     with(Math){
+//         x = cos(2)
+//     };
+//     console.log(x);
+// }
+// myFunction12();
+//
+// //在eval作用域创建的变量不能被调用
+// function myFunction13(){
+//     "use strict";
+//     eval ("var x = 2");
+//     alert(x);
+// }
+// myFunction13();
+
+//禁止this指向全局对象
+function f(){
+    console.log(!this);
+}
+//this指向全局对象
+f();
+function ff(){
+    "use strict";
+    console.log(!this);
+}
+//this的值为undefined
+ff();
+
+
+
+</script>
+</body>
+</html>

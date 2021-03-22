@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+    <p id="demo"></p>
+<script>
+    var person = {
+        firstNamw : "wang",
+        lastName : "li",
+        id : 3344,
+        fullName : function(){
+            //this指向调用它所在方法的对象
+            return this.firstNamw + " " + this.lastName;
+        }
+    }
+    document.getElementById("demo").innerHTML = person.fullName();
+    //单独使用this，指向全局（Global）对象,严格模式下也是指向全局（Global）对象
+    var x = this;
+    console.log(x);//window
+
+    //函数中使用this,函数的所属者默认绑定到this上
+    function myFunction(){
+    console.log(this);//window
+    }
+    myFunction();
+    //严格模式下使用this
+    function myFunction1(){
+        "use strict"
+        function myFunction(){
+            console.log(this);//undefined
+        }
+        myFunction();
+    }
+    myFunction1();
+
+    //    显式函数绑定
+    //    在js中函数也是对象，对象则有方法，apply和call就是函数对象的方法
+//    apply和call允许切换函数执行的上下文环境，即this绑定的对象
+    var person1 = {
+        fullName : function(){
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person2 = {
+        firstName : "john",
+        lastName : "Doe",
+    }
+    console.log(person1.fullName.call(person2));
+//    this指向person2
+
+</script>
+    <button onclick="this.style.display='none'">点击之后消失</button>
+<!--    this指向接受事件的HTML元素-->
+</body>
+</html>

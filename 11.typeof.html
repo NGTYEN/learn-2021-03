@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write(typeof "john");//string
+    document.write('<br>');
+    document.write(typeof 3.14);//number
+    document.write('<br>');
+    document.write(typeof false);//boolean
+    document.write('<br>');
+    document.write(typeof [1,2,3,4]);//object,数组是特殊的对象类型
+    document.write('<br>');
+    document.write(typeof {name:'john',age:21});//object
+
+    // null是特殊类型，表示空对象引用
+    document.write('<br>');
+    document.write(typeof null);//object
+    // undefined是没有设置值得变量，任何变量都可以通过设置值为undefined来清空，类型为undefined
+    var person = undefined;
+    document.write('<br>');
+    document.write(typeof person);//undefined
+    //typeof一个没有值得变量会返回一个undefined
+    var person1;
+    document.write('<br>');
+    document.write(typeof person1);//undefined
+
+    document.write('<br>');
+    document.write(typeof null);//object
+    document.write('<br>');
+    document.write(typeof undefined);//undefined
+    document.write('<br>');
+    document.write(null == undefined);//true
+    document.write('<br>');
+    document.write(null === undefined);//false
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+    //重新声明变量
+    var x = 10;
+    console.log(x);
+    {
+        var x = 2;
+        console.log(x);//2
+    }
+    console.log(x);//2
+
+    let y = 10;
+    console.log(y);
+    {
+        let y = 2;
+        console.log(y);//2
+    }
+    console.log(y);//10
+
+//    循环作用域
+    var i= 5;
+    for( var i = 0; i < 10; i++){
+
+    }
+    console.log(i);//10
+    let j = 5;
+    for(let j = 0; j < 10; j++){
+
+    }
+    console.log(j);//5
+
+
+    var carName1 = "volvo";
+    document.getElementById("demo1").innerHTML = "I can display" + " "+ window.carName1;
+
+    let carName2 = "BMW";
+    document.getElementById("demo2").innerHTML = "I can display" + " "+ window.carName2;
+
+//    重置变量
+//    在相同的作用域或块级作用域中，不能使用 let 关键字来重置 var 关键字声明的变量:
+    var a = 1;
+    // let a = 1;
+    {
+        var a = 1;
+        // let a = 1;
+    }
+//   在相同的作用域或块级作用域中，不能使用 let 关键字来重置 let 关键字声明的变量:
+    let b = 1;
+    // let b = 2;
+    {
+        let b = 1;
+        // let b = 2;
+    }
+    // 在相同的作用域或块级作用域中，不能使用 var 关键字来重置 let 关键字声明的变量:
+    let c = 1;
+    // var c = 2;
+    {
+        let c = 1;
+        // var c = 2;
+    }
+//    let 关键字在不同作用域，或不同块级作用域中是可以重新声明赋值的:
+    let d = 1;
+    {
+        let d = 2;
+    }
+
+//    const
+    const PI = 3.1434444;
+    console.log(PI);
+    // PI = 3.14;
+
+    const car = {
+        type : "123",
+        model : "123",
+        color : "123"
+    }
+    console.log(car);
+    car.color = "345";
+    car.owner = "345"
+    console.log(car);
+    //不能对常量对象重新赋值,不能对常量数组重新赋值：
+    // car = {
+    //     aaa : "123"
+    // }
+</script>
+</body>
+</html>

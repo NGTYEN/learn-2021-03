@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="myFunction()">click me</button>
+<button onclick="myFunction1('harry',13)">click me</button>
+<p id="demo"></p>
+<script>
+    function myFunction(){
+        alert('hello')
+    }
+    //带参数的函数
+    function myFunction1(name,age){
+        alert(name + age);
+    }
+//    带返回值的函数，在使用return语句时，函数会停止执行，病返回指定的值
+    function myFunction2(){
+        var x = 5;
+        return x;
+    }
+    document.getElementById('demo').innerHTML = myFunction2();
+//    如果把值赋给尚未生命的变量，该变量被自动作为window的一个属性
+    var num1 = 1;
+    num2 = 2;
+    console.log(this.num1);
+    console.log(window.num1);
+    console.log(window.num2);
+
+    delete num1;
+    console.log(num1);
+
+    delete num2;
+    console.log(delete num2);
+    console.log(num2);
+
+
+</script>
+</body>
+</html>

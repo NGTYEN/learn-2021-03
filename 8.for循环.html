@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // for循环
+    var cars = "colco";
+    for(var i = 0; i < cars.length; i++){
+        document.write(cars[i] + "<br>")
+    }
+    // for/in循环
+    var person  = {
+        fname : "bill",
+        lname : "gates",
+        age : 23
+    }
+    var txt ="";
+    for(x in person){
+        txt = txt + person[x];
+    }
+    document.write(txt);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<script>
+    //函数表达式
+    var x = function(a, b) {
+        return a * b;
+    }
+    document.getElementById("demo").innerHTML = x;
+    document.getElementById("demo1").innerHTML = x(2, 4);
+    //构造函数
+    var myFunction = new Function("a", "b", "return a * b");
+    var y = myFunction(4, 3);
+    document.getElementById("demo2").innerHTML = y;
+
+    var myFunction1 = function(a, b) {
+        return a * b;
+    }
+    document.getElementById("demo3").innerHTML = myFunction1(4, 5);
+
+    //函数提升,函数可以在声明之前调用，使用表达式定义函数时无法提升
+     document.getElementById("demo4").innerHTML = myFunction2(5);
+     function myFunction2(y) {
+         return y * y;
+     }
+
+     //自调用函数
+    // 如果表达式后面紧跟()，则会自动调用
+    (function() {
+        console.log("我将自己调用");
+    })();
+
+     //函数可作为一个值使用
+    function myFunction3(a, b) {
+        return a * b;
+    }
+    var z = myFunction3(4, 3);
+    document.getElementById("demo5").innerHTML = z;
+
+    //函数可作为表达式使用
+    function myFunction4(a, b) {
+        return a * b;
+    }
+    var a = myFunction4(4, 3) * 2;
+    document.getElementById("demo6").innerHTML = a;
+
+</script>
+</body>
+</html>

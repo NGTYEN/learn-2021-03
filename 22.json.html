@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var txt = '{"sites" : [' +
+        '{"name" : "Runoob", "url" : "www.runoob.com"}, ' +
+        '{"name" : "google", "url" : "www.google.com"},' +
+        ' {"name" : "baidu", "url" : "www.baidu.com"}]}'
+    var obj = JSON.parse(txt);
+    document.getElementById("demo").innerHTML = obj.sites[1].name + " " + obj.sites[1].url;
+</script>
+</body>
+</html>

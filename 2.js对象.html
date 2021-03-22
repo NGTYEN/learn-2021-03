@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var person = {
+        firstname : "mace",
+        lastname : "boy",
+        id : 3344
+    }
+    document.write(person.firstname+ '<br>');
+    document.write(person["lastname"]+ '<br>');
+//    undefined and null
+    car1 = null;
+    document.write(car1+ '<br>');
+    var car2;
+    document.write(car2+ '<br>');
+    //javascript变量皆为对象
+    var carname = new String;
+    document.write(typeof(carname)+ '<br>');
+    var x = new Number;
+    document.write(typeof(x)+ '<br>');
+
+//    对象有属性和方法
+
+//    对象定义
+    var person = {
+        name:"bby",
+        age:12,
+        sex:"boy",
+        fullName : function(){
+            return this.name + " " + this.sex;
+        }
+    }
+    document.write('我的名字是'+person.name+'现在'+person.age+'我是'+person.sex+ '<br>')
+    // /访问对象属性
+    document.write(person.name+ '<br>');
+    document.write(person["age"]+ '<br>');
+//对象方法
+//    函数属性作为一个方法访问
+    document.write(person.fullName()+ '<br>');
+//    函数属性作为一个方法访问
+    document.write(person.fullName+ '<br>');
+</script>
+</body>
+</html>

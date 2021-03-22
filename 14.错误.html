@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="message()">click</button>
+<br>
+<p id="p01">123</p>
+<input type="text" id="demo">
+<button onclick="myFunction()">click</button>
+
+<script>
+    // try语句测试代码块的错误
+    // catch语句处理错误
+    // throw语句创建自定义错误
+    // finally语句在try和catch语句之后，无论是否触发异常，该语句都会执行
+    var txt = "";
+    function message(){
+        try{
+            allert("welcome");
+        }catch(err){
+            txt = "本页有错";
+            txt += "错误描述" + err.message+ "\n\n";
+            txt += "点击继续。\n\n";
+            alert(txt);
+        }
+    }
+    function myFunction(){
+        var message = document.getElementById("p01");
+        message.innerHTML = "";
+        x = document.getElementById("demo").value;
+        try{
+            if(x=="") throw "值是空的";
+            if(isNaN(x)) throw "值不是一个数字";
+            x = Number(x);
+            if(x>10) throw "值太大";
+            if(x<5) throw "太小";
+        }catch(err){
+            message.innerHTML = '错误：' + err + ".";
+        }
+        finally{
+            document.getElementById("demo").value = "";
+        }
+    }
+</script>
+</body>
+</html>
