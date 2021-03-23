@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo2{
+            width: 200px;
+            height: 100px;
+            background: #fffc4d;
+        }
+    </style>
+</head>
+<body>
+<a>123</a>
+<P id="demo">234</P>
+<p class="demo">345</p>
+<button onclick="changeColor()">点击我，变绿色</button>
+<p id="demo1">demo1</p>
+<button id="btn">click</button>
+<br>
+输入你的名字 <input type="text" id="fname" onchange="myFunction()">
+<div id="demo2" onmouseover="mOver(this)" onmouseout="oOut(this)">mouse over me</div>
+    <script>
+    //改变 HTML 内容
+    document.getElementsByTagName("a")[0].innerHTML = "我是A";
+    document.getElementById("demo").innerHTML = "我的id是demo";
+    document.getElementsByClassName("demo")[0].innerHTML = "我的class是demo";
+    //改变 HTML 属性
+    document.getElementsByTagName("a")[0].href = "https://www.baidu.com/";
+    //改变 HTML 样式
+    document.getElementById("demo").style.color = "blue";
+    document.getElementById("demo").style.fontSize = "larger";
+    //使用事件
+    function changeColor() {
+        document.getElementsByClassName("demo")[0].style.color = "green";
+    }
+
+    //使用HTML DOM分配事件
+    document.getElementById("btn").onclick = function() {
+        displayDate();
+    }
+    function displayDate() {
+        document.getElementById("demo1").innerHTML = Date();
+    }
+    function myFunction() {
+        var txt = document.getElementById("fname");
+        txt.value = txt.value.toUpperCase();
+    }
+    function mOver(obj) {
+        obj.innerHTML = "thank you";
+    }
+    function oOut(obj) {
+        obj.innerHTML = "move over me";
+    }
+</script>
+</body>
+</html>

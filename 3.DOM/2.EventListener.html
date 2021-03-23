@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="myBtn">click</button>
+<p id="demo"></p>
+
+<script>
+    //addEventListener()
+    /**
+     * 语法：
+     * element.addEventListener(event, function, useCapture);
+     * event:事件类型（click, mousedown），不要使用on前缀
+     * function:事件触发后调用的函数
+     * useCapture:布尔值，用于描述事件是冒泡还是捕获，可选
+     */
+    document.getElementById("myBtn").addEventListener("mouseover",mOver);
+    document.getElementById("myBtn").addEventListener("mouseout",mOut);
+    function mOver() {
+        document.getElementById("demo").innerHTML += "mouseover" + "<br>";
+    }
+    function mOut() {
+        document.getElementById("demo").innerHTML += "mouseout" + "<br>";
+    }
+
+    //向 Window 对象添加事件句柄
+    window.addEventListener("resize", function() {
+        document.getElementById("demo").innerHTML += Math.random() + "<br>";
+    })
+
+    //传递参数，当传递参数值时，使用"匿名函数"调用带参数的函数：
+    var p1 = 2, p2 = 4;
+    document.getElementById("myBtn").addEventListener("click", function(){
+        add(p1, p2);
+    })
+    function add(a, b) {
+        document.getElementById("demo").innerHTML += a * b + "<br>";
+    }
+</script>
+</body>
+</html>
